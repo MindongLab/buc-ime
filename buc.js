@@ -128,7 +128,10 @@
             mesh.push([Object.keys(vs)[i],  cc(Object.keys(vs)[i])] );
             var tones = vs[Object.keys(vs)[i]];
             for (var j = 0; j < tones.length; ++j) {
-                mesh.push([tones[j], cc(tones[j])]);
+                if (typeof tones[j] == "string") {
+                    mesh.push([tones[j], cc(tones[j])]);
+                }
+                
             }
         }
         // @todo: remove duplicate
@@ -144,7 +147,10 @@
     // 無模糊查詢
     function matchString(s, index) {
         function longestMatch(s, pattern) {
-            for (var i = 0; ; i--) {
+            if (s.startsWith(pattern)) {
+                return pattern.length;
+            }
+            for (var i = -1; ; i--) {
                 if (s.startsWith(pattern.slice(0, i))) {
                     return pattern.length + i;
                 }
@@ -163,18 +169,35 @@
             var result = [];
             for (var i = 0; i < index.length; ++i) {
                 var lenMatched = longestMatch(s, index[i][1]);
-                if (lenMatched == index[i][1].)
+                if (lenMatched == 0) {
+                    continue;
+                }
+                if (lenMatched < index[i][1].length) {//paritally matched => no further 
+                    //result.push(index[i][0]);
+                } else {
+                    if (s.length-lenMatched > 0){
+                        var tmp = tryMatch(s.slice(lenMatched));
+                        tmp = multiplyStr(index[i][0], tmp);
+                        result = result.concat(tmp);
+                    } else {
+                        result.push(index[i][0]);
+                    }
+                }
             }
+            return result;
         }
-        var i = 0;
-        while (i < s.length) {
+        var suggestions = tryMatch(s);
 
-        }
+        suggestions.sort(function (a,b) {
+            return b.length - a.length;
+        })
+
+        return suggestions;
     }
 
     var index = generateIndex();
-
-
+    console.log(index);
+    window.mt = function (s) {return matchString(s, index);};
 
 }());
 
