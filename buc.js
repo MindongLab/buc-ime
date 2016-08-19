@@ -117,6 +117,65 @@
     }
     window.cc = function (s) { return convertToLatin(s, generateKeyMapping()) };
 
+    function generateIndex() {
+        var mesh = [];
+        var cc = function (s) { return convertToLatin(s, generateKeyMapping()) }
+        for (var i = 0; i < cons.length; ++ i) {
+            mesh.push([cons[i], cc(cons[i])]);
+        }
+
+        for (var i = 0; i < Object.keys(vs).length; ++ i) {
+            mesh.push([Object.keys(vs)[i],  cc(Object.keys(vs)[i])] );
+            var tones = vs[Object.keys(vs)[i]];
+            for (var j = 0; j < tones.length; ++j) {
+                mesh.push([tones[j], cc(tones[j])]);
+            }
+        }
+        // @todo: remove duplicate
+        mesh.sort(function (a, b) {
+            return (b[1].length - a[1].length); // @todo second ordering
+        });
+        
+        return mesh;
+    }
+
+
+    // @return: array of suggestions
+    // 無模糊查詢
+    function matchString(s, index) {
+        function longestMatch(s, pattern) {
+            for (var i = 0; ; i--) {
+                if (s.startsWith(pattern.slice(0, i))) {
+                    return pattern.length + i;
+                }
+            }
+        }
+
+        function multiplyStr(s, arr) {
+            var tmp = [];
+            for (var i = 0; i < arr.length; ++ i) {
+                tmp.push(s+arr[i]);
+            }
+            return tmp;
+        }
+
+        function tryMatch(s) {
+            var result = [];
+            for (var i = 0; i < index.length; ++i) {
+                var lenMatched = longestMatch(s, index[i][1]);
+                if (lenMatched == index[i][1].)
+            }
+        }
+        var i = 0;
+        while (i < s.length) {
+
+        }
+    }
+
+    var index = generateIndex();
+
+
+
 }());
 
 
