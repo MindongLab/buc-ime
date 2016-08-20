@@ -180,7 +180,10 @@
         suggestions.sort(function (a, b) {
             return b.length - a.length;
         });
-        return suggestions;
+        var unique = suggestions.filter(function (elem, index, self) {
+            return index == self.indexOf(elem);
+        });
+        return unique;
     }
     var index = generateIndex();
     console.log(index);
