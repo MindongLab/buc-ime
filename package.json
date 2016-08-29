@@ -1,0 +1,30 @@
+{
+  "name": "buc-ime",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bucengine.js",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.17",
+    "es6-shim": "^0.35.1",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.6",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "zone.js": "^0.6.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MindongLab/buc-ime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MindongLab/buc-ime/issues"
+  },
+  "homepage": "https://github.com/MindongLab/buc-ime#readme"
+}

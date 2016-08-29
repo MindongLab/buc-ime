@@ -9,8 +9,6 @@ var BUCIMEParser = (function () {
         this.index = this.generateIndex();
         console.log(this.index);
     }
-    // 生成字母和帶標調字母調映射表
-    // @return: [ [帶標字母, 無標字母], ...]
     BUCIMEParser.prototype.generateKeyMapping = function () {
         var keys = Object.keys(this.keymap);
         var mapping = [];
@@ -26,7 +24,6 @@ var BUCIMEParser = (function () {
         });
         return mapping;
     };
-    // 去除聲調和下標點
     BUCIMEParser.prototype.convertToLatin = function (s) {
         function isMatch(pos, pattern) {
             return s.slice(pos).startsWith(pattern);
@@ -49,11 +46,9 @@ var BUCIMEParser = (function () {
         }
         return result;
     };
-    // 生成索引
     BUCIMEParser.prototype.generateIndex = function () {
         var _this = this;
         var mesh = [];
-        // Shorthand
         var cc = function (s) { return _this.convertToLatin(s); };
         for (var i = 0; i < this.initials.length; ++i) {
             mesh.push([this.initials[i], cc(this.initials[i])]);
@@ -63,20 +58,16 @@ var BUCIMEParser = (function () {
             mesh.push([Object.keys(vs)[i], cc(Object.keys(vs)[i])]);
             var tones = vs[Object.keys(vs)[i]];
             for (var j = 0; j < tones.length; ++j) {
-                // Don't add null
                 if (typeof tones[j] == "string") {
                     mesh.push([tones[j], cc(tones[j])]);
                 }
             }
         }
-        // @todo: remove duplicate
         mesh.sort(function (a, b) {
-            return (b[1].length - a[1].length); // @todo second ordering
+            return (b[1].length - a[1].length);
         });
         return mesh;
     };
-    // @return: array of suggestions
-    // 無模糊查詢
     BUCIMEParser.prototype.matchString = function (s) {
         var _this = this;
         function longestMatch(s, pattern) {
