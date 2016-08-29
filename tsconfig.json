@@ -4,6 +4,8 @@
         "target": "es5"
     },
     "files" : [
-        "buc.ts"
+        "src/buc.ts",
+        "src/parser.ts",
+        "src/data.ts"
     ]
 }

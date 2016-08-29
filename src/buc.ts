@@ -1,5 +1,5 @@
-import * as data from './src/data'; 
-import {BUCIMEParser as Parser} from './src/parser';
+import * as data from './data'; 
+import {BUCIMEParser as Parser} from './parser';
 
 let parser = new Parser(data.initials, data.finals, data.keymap);
 
