@@ -38,7 +38,7 @@ exports.finals = {
     /*天*/ 'ieng': ['iĕng', 'iēng', 'iéng', 'iék', 'ièng', 'iêng', 'iĕk'],
     /*奇*/ 'ia': ['iă', 'iā', 'iá', 'iáh', 'ià', 'iâ', 'iăk'],
     /*歪*/ 'uai': ['uăi', 'uāi', 'uái', 'uáih', 'uài', 'uâi', 'uăih'],
-    /*溝*/ 'eu': ['ĕu', 'ēu', 'áiu', 'áiuh', 'èu', 'âiu', 'ĕuh']
+    /*溝*/ 'eu': ['ĕu', 'ēu', 'áiu', 'áiuh', 'èu', 'âiu', 'ĕuh'],
 };
 // Key mapping (without tones)
 // Note that letters with dots are more than one unicode glyph
