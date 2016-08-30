@@ -1,10 +1,10 @@
 module.exports = {
     entry: {
         'bucengine':'./src/buc.ts',
-        'ui': './src/ui/ime.ts'
+        'ui': './src/ui/main.ts'
     },
     output: {
-        filename: '[name].js'
+        filename: 'output/[name].js'
     },
     resolve: {
         extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']

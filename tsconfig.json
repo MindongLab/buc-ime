@@ -3,11 +3,11 @@
         "module": "commonjs",
         "target": "es5",
         "removeComments": true
-    },
-    "files" : [
+    }
+   /* "files" : [
         "src/buc.ts",
         "src/parser.ts",
         "src/data.ts",
-        "src/ui/ime.ts"
-    ]
+        "src/ui/main.ts"
+    ]*/
 }
