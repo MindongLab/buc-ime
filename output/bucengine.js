@@ -1,1 +1,257 @@
-!function(i){function n(u){if(t[u])return t[u].exports;var e=t[u]={exports:{},id:u,loaded:!1};return i[u].call(e.exports,e,e.exports,n),e.loaded=!0,e.exports}var t={};return n.m=i,n.c=t,n.p="",n(0)}({0:function(i,n,t){"use strict";var u=t(360),e=t(361),g=new e.BUCIMEParser(u.initials,u.finals,u.keymap);window.bucime={parser:g}},360:function(i,n){"use strict";n.initials=["b","p","m","d","t","n","l","g","k","ng","h","c","ch","s"],n.finals={ung:["ŭng","ūng","óng","ók","ùng","ông","ŭk"],ua:["uă","uā","uá","uáh","uà","uâ","uăh"],iong:["iŏng","iōng","ióng","iók","iòng","iông","iŏk"],iu:["iŭ","iū","éu","éuh","iù","êu",null],ang:["ăng","āng","áng","áh","àng","âng","ăk"],ai:["ăi","āi","ái","áih","ài","âi","ăih"],a:["ă","ā","á","ăh","à","â","ăh"],ing:["ĭng","īng","éng","ék","ìng","êng","ĭk"],uang:["uăng","uāng","uáng","uák","uàng","uâng","uăk"],"o̤":["ŏ̤","ō̤","ó̤","ó̤h","ò̤","ô̤","ŏ̤h"],"ṳ":["ṳ̆","ṳ̄","é̤ṳ","é̤uh","ṳ̀","ê̤ṳ","ṳ̆h"],uoi:["uŏi","uōi","uói","uóih","ùoi","uôi",null],u:["ŭ","ū","ó","óh","ù","ô","ŭh"],eng:["ĕng","ēng","áing","áik","èng","âing","ĕk"],uong:["uŏng","uōng","uóng","uók","uòng","uông","uŏk"],ui:["ŭi","ūi","ói","óih","ùi","ôi","ŭih"],ieu:["iĕu","iēu","iéu","iéuh","ièu","iêu",null],"ṳng":["ṳ̆ng","ṳ̄ng","é̤ṳng","é̤ṳk","ṳ̀ng","ê̤ṳng","ṳ̆k"],ong:["ŏng","ōng","áung","áuk","òng","âung","ŏk"],i:["ĭ","ī","é","éh","ì","ê","ĭh"],"e̤ng":["ĕ̤ng","ē̤ng","áe̤ng","áe̤k","è̤ng","âe̤ng","ĕ̤k"],au:["ău","āu","áu","áuh","àu","âu","ăuh"],uo:["ŭo","ūo","uó","ŭok","ùo","uô","uŏh"],"a̤":["ă̤","ā̤","á̤","á̤h","à̤","â̤","ă̤h"],io:["iŏ","iō","ió","ióh","iò","iô","iŏh"],ie:["iĕ","iē","ié","iéh","iè","iê","iĕh"],iang:["iăng","iāng","iáng","iák","iàng","iâng","iăk"],oi:["ŏi","ōi","ó̤i","ó̤ih","òi","ô̤i","ŏih"],"e̤":["ĕ̤","ē̤","áe̤","áe̤h","è̤","âe̤","ĕ̤h"],ieng:["iĕng","iēng","iéng","iék","ièng","iêng","iĕk"],ia:["iă","iā","iá","iáh","ià","iâ","iăk"],uai:["uăi","uāi","uái","uáih","uài","uâi","uăih"],eu:["ĕu","ēu","áiu","áiuh","èu","âiu","ĕuh"]},n.keymap={a:["a","ă","ā","á","à","â","a̤","ă̤","ā̤","á̤","à̤","â̤"],b:["b"],c:["c"],d:["d"],e:["e","ĕ","ē","é","è","ê","e̤","ĕ̤","ē̤","é̤","è̤","ê̤"],f:["f"],g:["g"],h:["h"],i:["i","ĭ","ī","ì"],j:["j"],k:["k"],l:["l"],m:["m"],n:["n"],o:["o","ŏ","ō","ó","ò","ô","o̤","ŏ̤","ō̤","ó̤","ò̤","ô̤"],p:["p"],q:["q"],r:["r"],s:["s"],t:["t"],u:["u","ŭ","ū","ù","ṳ","ṳ̆","ṳ̄","ṳ̀"],v:["v"],w:["w"],x:["x"],y:["y"],z:["z"]}},361:function(i,n){"use strict";var t=function(){function i(i,n,t){this.initials=i,this.finals=n,this.keymap=t,this.mapping=this.generateKeyMapping(),console.log(this.mapping),this.index=this.generateIndex(),console.log(this.index)}return i.prototype.generateKeyMapping=function(){for(var i=Object.keys(this.keymap),n=[],t=0;t<i.length;++t)for(var u=i[t],e=this.keymap[i[t]],g=0;g<e.length;++g)n.push([e[g],u]);return n.sort(function(i,n){return n[0].length-i[0].length}),n},i.prototype.convertToLatin=function(i){function n(n,t){return i.slice(n).startsWith(t)}for(var t="",u=0;u<i.length;){for(var e=!1,g=0;g<this.mapping.length;++g)if(n(u,this.mapping[g][0])){t+=this.mapping[g][1],u+=this.mapping[g][0].length,e=!0;break}if(!e)throw"Error parsing"}return t},i.prototype.generateIndex=function(){for(var i=this,n=[],t=function(n){return i.convertToLatin(n)},u=0;u<this.initials.length;++u)n.push([this.initials[u],t(this.initials[u])]);for(var e=this.finals,u=0;u<Object.keys(e).length;++u){n.push([Object.keys(e)[u],t(Object.keys(e)[u])]);for(var g=e[Object.keys(e)[u]],r=0;r<g.length;++r)"string"==typeof g[r]&&n.push([g[r],t(g[r])])}return n.sort(function(i,n){return n[1].length-i[1].length}),n},i.prototype.matchString=function(i){function n(i,n){if(i.startsWith(n))return n.length;for(var t=-1;;t--)if(i.startsWith(n.slice(0,t)))return n.length+t}function t(i,n){for(var t=[],u=0;u<n.length;++u)t.push(i+n[u]);return t}var u=this,e=function(i){for(var g=[],r=0;r<u.index.length;++r){var h=n(i,u.index[r][1]);if(0!=h)if(h<u.index[r][1].length);else if(i.length-h>0){var o=e(i.slice(h));o=t(u.index[r][0],o),g=g.concat(o)}else g.push(u.index[r][0])}return g},g=e(i);g.sort(function(i,n){return n.length-i.length});var r=g.filter(function(i,n,t){return n==t.indexOf(i)});return r},i}();n.BUCIMEParser=t}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var data = __webpack_require__(1);
+	var parser_1 = __webpack_require__(2);
+	var parser = new parser_1.BUCIMEParser(data.initials, data.finals, data.keymap);
+	window.bucime = {
+	    parser: parser
+	};
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	"use strict";
+	exports.initials = ['b', 'p', 'm', 'd', 't', 'n', 'l', 'g', 'k', 'ng', 'h', 'c', 'ch', 's'];
+	exports.finals = {
+	    'ung': ['ŭng', 'ūng', 'óng', 'ók', 'ùng', 'ông', 'ŭk'],
+	    'ua': ['uă', 'uā', 'uá', 'uáh', 'uà', 'uâ', 'uăh'],
+	    'iong': ['iŏng', 'iōng', 'ióng', 'iók', 'iòng', 'iông', 'iŏk'],
+	    'iu': ['iŭ', 'iū', 'éu', 'éuh', 'iù', 'êu', null],
+	    'ang': ['ăng', 'āng', 'áng', 'áh', 'àng', 'âng', 'ăk'],
+	    'ai': ['ăi', 'āi', 'ái', 'áih', 'ài', 'âi', 'ăih'],
+	    'a': ['ă', 'ā', 'á', 'ăh', 'à', 'â', 'ăh'],
+	    'ing': ['ĭng', 'īng', 'éng', 'ék', 'ìng', 'êng', 'ĭk'],
+	    'uang': ['uăng', 'uāng', 'uáng', 'uák', 'uàng', 'uâng', 'uăk'],
+	    'o̤': ['ŏ̤', 'ō̤', 'ó̤', 'ó̤h', 'ò̤', 'ô̤', 'ŏ̤h'],
+	    'ṳ': ['ṳ̆', 'ṳ̄', 'é̤ṳ', 'é̤uh', 'ṳ̀', 'ê̤ṳ', 'ṳ̆h'],
+	    'uoi': ['uŏi', 'uōi', 'uói', 'uóih', 'ùoi', 'uôi', null],
+	    'u': ['ŭ', 'ū', 'ó', 'óh', 'ù', 'ô', 'ŭh'],
+	    'eng': ['ĕng', 'ēng', 'áing', 'áik', 'èng', 'âing', 'ĕk'],
+	    'uong': ['uŏng', 'uōng', 'uóng', 'uók', 'uòng', 'uông', 'uŏk'],
+	    'ui': ['ŭi', 'ūi', 'ói', 'óih', 'ùi', 'ôi', 'ŭih'],
+	    'ieu': ['iĕu', 'iēu', 'iéu', 'iéuh', 'ièu', 'iêu', null],
+	    'ṳng': ['ṳ̆ng', 'ṳ̄ng', 'é̤ṳng', 'é̤ṳk', 'ṳ̀ng', 'ê̤ṳng', 'ṳ̆k'],
+	    'ong': ['ŏng', 'ōng', 'áung', 'áuk', 'òng', 'âung', 'ŏk'],
+	    'i': ['ĭ', 'ī', 'é', 'éh', 'ì', 'ê', 'ĭh'],
+	    'e̤ng': ['ĕ̤ng', 'ē̤ng', 'áe̤ng', 'áe̤k', 'è̤ng', 'âe̤ng', 'ĕ̤k'],
+	    'au': ['ău', 'āu', 'áu', 'áuh', 'àu', 'âu', 'ăuh'],
+	    'uo': ['ŭo', 'ūo', 'uó', 'ŭok', 'ùo', 'uô', 'uŏh'],
+	    'a̤': ['ă̤', 'ā̤', 'á̤', 'á̤h', 'à̤', 'â̤', 'ă̤h'],
+	    'io': ['iŏ', 'iō', 'ió', 'ióh', 'iò', 'iô', 'iŏh'],
+	    'ie': ['iĕ', 'iē', 'ié', 'iéh', 'iè', 'iê', 'iĕh'],
+	    'iang': ['iăng', 'iāng', 'iáng', 'iák', 'iàng', 'iâng', 'iăk'],
+	    'oi': ['ŏi', 'ōi', 'ó̤i', 'ó̤ih', 'òi', 'ô̤i', 'ŏih'],
+	    'e̤': ['ĕ̤', 'ē̤', 'áe̤', 'áe̤h', 'è̤', 'âe̤', 'ĕ̤h'],
+	    'ieng': ['iĕng', 'iēng', 'iéng', 'iék', 'ièng', 'iêng', 'iĕk'],
+	    'ia': ['iă', 'iā', 'iá', 'iáh', 'ià', 'iâ', 'iăk'],
+	    'uai': ['uăi', 'uāi', 'uái', 'uáih', 'uài', 'uâi', 'uăih'],
+	    'eu': ['ĕu', 'ēu', 'áiu', 'áiuh', 'èu', 'âiu', 'ĕuh'],
+	};
+	exports.keymap = {
+	    'a': ['a', 'ă', 'ā', 'á', 'à', 'â', 'a̤', 'ă̤', 'ā̤', 'á̤', 'à̤', 'â̤'],
+	    'b': ['b'],
+	    'c': ['c'],
+	    'd': ['d'],
+	    'e': ['e', 'ĕ', 'ē', 'é', 'è', 'ê', 'e̤', 'ĕ̤', 'ē̤', 'é̤', 'è̤', 'ê̤'],
+	    'f': ['f'],
+	    'g': ['g'],
+	    'h': ['h'],
+	    'i': ['i', 'ĭ', 'ī', 'ì'],
+	    'j': ['j'],
+	    'k': ['k'],
+	    'l': ['l'],
+	    'm': ['m'],
+	    'n': ['n'],
+	    'o': ['o', 'ŏ', 'ō', 'ó', 'ò', 'ô', 'o̤', 'ŏ̤', 'ō̤', 'ó̤', 'ò̤', 'ô̤'],
+	    'p': ['p'],
+	    'q': ['q'],
+	    'r': ['r'],
+	    's': ['s'],
+	    't': ['t'],
+	    'u': ['u', 'ŭ', 'ū', 'ù', 'ṳ', 'ṳ̆', 'ṳ̄', 'ṳ̀'],
+	    'v': ['v'],
+	    'w': ['w'],
+	    'x': ['x'],
+	    'y': ['y'],
+	    'z': ['z']
+	};
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	"use strict";
+	var BUCIMEParser = (function () {
+	    function BUCIMEParser(initials, finals, keymap) {
+	        this.initials = initials;
+	        this.finals = finals;
+	        this.keymap = keymap;
+	        this.mapping = this.generateKeyMapping();
+	        console.log(this.mapping);
+	        this.index = this.generateIndex();
+	        console.log(this.index);
+	    }
+	    BUCIMEParser.prototype.generateKeyMapping = function () {
+	        var keys = Object.keys(this.keymap);
+	        var mapping = [];
+	        for (var i = 0; i < keys.length; ++i) {
+	            var currentLatin = keys[i];
+	            var letters = this.keymap[keys[i]];
+	            for (var j = 0; j < letters.length; ++j) {
+	                mapping.push([letters[j], currentLatin]);
+	            }
+	        }
+	        mapping.sort(function (a, b) {
+	            return b[0].length - a[0].length;
+	        });
+	        return mapping;
+	    };
+	    BUCIMEParser.prototype.convertToLatin = function (s) {
+	        function isMatch(pos, pattern) {
+	            return s.slice(pos).startsWith(pattern);
+	        }
+	        var result = '';
+	        var i = 0;
+	        while (i < s.length) {
+	            var found = false;
+	            for (var j = 0; j < this.mapping.length; ++j) {
+	                if (isMatch(i, this.mapping[j][0])) {
+	                    result = result + this.mapping[j][1];
+	                    i = i + this.mapping[j][0].length;
+	                    found = true;
+	                    break;
+	                }
+	            }
+	            if (!found) {
+	                throw "Error parsing";
+	            }
+	        }
+	        return result;
+	    };
+	    BUCIMEParser.prototype.generateIndex = function () {
+	        var _this = this;
+	        var mesh = [];
+	        var cc = function (s) { return _this.convertToLatin(s); };
+	        for (var i = 0; i < this.initials.length; ++i) {
+	            mesh.push([this.initials[i], cc(this.initials[i])]);
+	        }
+	        var vs = this.finals;
+	        for (var i = 0; i < Object.keys(vs).length; ++i) {
+	            mesh.push([Object.keys(vs)[i], cc(Object.keys(vs)[i])]);
+	            var tones = vs[Object.keys(vs)[i]];
+	            for (var j = 0; j < tones.length; ++j) {
+	                if (typeof tones[j] == "string") {
+	                    mesh.push([tones[j], cc(tones[j])]);
+	                }
+	            }
+	        }
+	        mesh.sort(function (a, b) {
+	            return (b[1].length - a[1].length);
+	        });
+	        return mesh;
+	    };
+	    BUCIMEParser.prototype.matchString = function (s) {
+	        var _this = this;
+	        function longestMatch(s, pattern) {
+	            if (s.startsWith(pattern)) {
+	                return pattern.length;
+	            }
+	            for (var i = -1;; i--) {
+	                if (s.startsWith(pattern.slice(0, i))) {
+	                    return pattern.length + i;
+	                }
+	            }
+	        }
+	        function multiplyStr(s, arr) {
+	            var tmp = [];
+	            for (var i = 0; i < arr.length; ++i) {
+	                tmp.push(s + arr[i]);
+	            }
+	            return tmp;
+	        }
+	        var tryMatch = function (s) {
+	            var result = [];
+	            for (var i = 0; i < _this.index.length; ++i) {
+	                var lenMatched = longestMatch(s, _this.index[i][1]);
+	                if (lenMatched == 0) {
+	                    continue;
+	                }
+	                if (lenMatched < _this.index[i][1].length) {
+	                }
+	                else {
+	                    if (s.length - lenMatched > 0) {
+	                        var tmp = tryMatch(s.slice(lenMatched));
+	                        tmp = multiplyStr(_this.index[i][0], tmp);
+	                        result = result.concat(tmp);
+	                    }
+	                    else {
+	                        result.push(_this.index[i][0]);
+	                    }
+	                }
+	            }
+	            return result;
+	        };
+	        var suggestions = tryMatch(s);
+	        suggestions.sort(function (a, b) {
+	            return b.length - a.length;
+	        });
+	        var unique = suggestions.filter(function (elem, index, self) {
+	            return index == self.indexOf(elem);
+	        });
+	        return unique;
+	    };
+	    return BUCIMEParser;
+	}());
+	exports.BUCIMEParser = BUCIMEParser;
+
+
+/***/ }
+/******/ ]);

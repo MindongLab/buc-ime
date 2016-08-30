@@ -1,12 +1,19 @@
 
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {CandidateView} from './CandidateView';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { CandidateView } from './CandidateView';
+
 
 @NgModule({
-    imports: [BrowserModule],
+    imports: [
+        BrowserModule,
+        CommonModule,
+    ],
     declarations: [CandidateView],
-    bootstrap: [CandidateView]
+    bootstrap: [CandidateView],
+    exports: [CandidateView]
 })
 export class BUCIMEUiModule {}
 

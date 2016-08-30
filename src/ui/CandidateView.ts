@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
-//import {Draggable} from 'ng2-draggable';
+import {Draggable} from './Draggable';
+
 @Component({
     selector: 'buc-candidate',
     templateUrl: 'src/ui/CandidateView.html',
     styleUrls: ['src/ui/CandidateView.css'],
-   // directives: [Draggable]
+    directives: [Draggable]
 })
 export class CandidateView {
     candidates: Array<string> = [

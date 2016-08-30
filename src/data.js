@@ -63,3 +63,4 @@ exports.keymap = {
     'y': ['y'],
     'z': ['z']
 };
+//# sourceMappingURL=data.js.map

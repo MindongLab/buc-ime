@@ -121,3 +121,4 @@ var BUCIMEParser = (function () {
     return BUCIMEParser;
 }());
 exports.BUCIMEParser = BUCIMEParser;
+//# sourceMappingURL=parser.js.map

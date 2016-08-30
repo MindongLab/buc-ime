@@ -5,3 +5,4 @@ var parser = new parser_1.BUCIMEParser(data.initials, data.finals, data.keymap);
 window.bucime = {
     parser: parser
 };
+//# sourceMappingURL=buc.js.map

@@ -1,10 +1,20 @@
 {
-    "compilerOptions" : {
+    "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
-        "removeComments": true
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "typeRoots": [
+            "../node_modules/@types"
+        ],
+        "types": [
+            "core-js"
+        ]
     }
-   /* "files" : [
+    /* "files" : [
         "src/buc.ts",
         "src/parser.ts",
         "src/data.ts",
