@@ -1,0 +1,9 @@
+div {
+    z-index:100;
+    background: blue;
+     position: fixed;
+     bottom: 0px;
+     right: 0px;
+     height: 50px;
+     width:100px;
+}

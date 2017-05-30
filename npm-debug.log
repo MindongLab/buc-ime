@@ -1,0 +1,124 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   '@angular/complier-cli' ]
+2 info using npm@2.15.8
+3 info using node@v4.4.7
+4 verbose install initial load of c:\Users\Radium\dev\buc-ime\package.json
+5 warn package.json buc-ime@0.0.1 No description
+6 warn package.json buc-ime@0.0.1 No README data
+7 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\angular2\package.json
+8 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\core-js\package.json
+9 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\es6-shim\package.json
+10 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\ng2-draggable\package.json
+11 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\reflect-metadata\package.json
+12 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\rxjs\package.json
+13 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\ts-loader\package.json
+14 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\typescript\package.json
+15 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\zone.js\package.json
+16 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\@angular\common\package.json
+17 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\@angular\compiler\package.json
+18 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\@angular\core\package.json
+19 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\@angular\http\package.json
+20 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\@angular\platform-browser\package.json
+21 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\@angular\platform-browser-dynamic\package.json
+22 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\@angular\router\package.json
+23 verbose installManyTop reading scoped package data from c:\Users\Radium\dev\buc-ime\node_modules\@types\core-js\package.json
+24 info package.json core-js@2.4.1 No README data
+25 info package.json @angular/common@2.0.0-rc.5 No description
+26 info package.json @angular/compiler@2.0.0-rc.5 No description
+27 info package.json @angular/core@2.0.0-rc.5 No description
+28 info package.json @angular/platform-browser@2.0.0-rc.5 No description
+29 info package.json @angular/platform-browser-dynamic@2.0.0-rc.5 No description
+30 info package.json @angular/router@3.0.0-rc.1 No description
+31 info package.json @angular/router@3.0.0-rc.1 No README data
+32 info package.json @angular/http@2.0.0-rc.5 No description
+33 info package.json @angular/http@2.0.0-rc.5 No README data
+34 verbose readDependencies loading dependencies from c:\Users\Radium\dev\buc-ime\package.json
+35 silly cache add args [ '@angular/complier-cli', null ]
+36 verbose cache add spec @angular/complier-cli
+37 silly cache add parsed spec Result {
+37 silly cache add   raw: '@angular/complier-cli',
+37 silly cache add   scope: '@angular',
+37 silly cache add   name: '@angular/complier-cli',
+37 silly cache add   rawSpec: '',
+37 silly cache add   spec: 'latest',
+37 silly cache add   type: 'tag' }
+38 silly addNamed @angular/complier-cli@latest
+39 verbose addNamed "latest" is being treated as a dist-tag for @angular/complier-cli
+40 info addNameTag [ '@angular/complier-cli', 'latest' ]
+41 silly mapToRegistry name @angular/complier-cli
+42 silly mapToRegistry scope (from package name) @angular
+43 verbose mapToRegistry no registry URL found in name for scope @angular
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: '@angular/complier-cli',
+46 silly mapToRegistry   scope: '@angular',
+46 silly mapToRegistry   name: '@angular/complier-cli',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcomplier-cli
+48 verbose addNameTag registry:https://registry.npmjs.org/@angular%2fcomplier-cli not in flight; fetching
+49 verbose request uri https://registry.npmjs.org/@angular%2fcomplier-cli
+50 verbose request no auth needed
+51 info attempt registry request try #1 at 10:36:39
+52 verbose request id 9341bf5e33fc788b
+53 http request GET https://registry.npmjs.org/@angular%2fcomplier-cli
+54 http 404 https://registry.npmjs.org/@angular%2fcomplier-cli
+55 verbose headers { 'content-type': 'application/json',
+55 verbose headers   'cache-control': 'max-age=0',
+55 verbose headers   'content-length': '21',
+55 verbose headers   'accept-ranges': 'bytes',
+55 verbose headers   date: 'Wed, 31 Aug 2016 00:36:52 GMT',
+55 verbose headers   via: '1.1 varnish',
+55 verbose headers   age: '0',
+55 verbose headers   connection: 'keep-alive',
+55 verbose headers   'x-served-by': 'cache-mel6521-MEL',
+55 verbose headers   'x-cache': 'MISS',
+55 verbose headers   'x-cache-hits': '0',
+55 verbose headers   'x-timer': 'S1472603812.678646,VS0,VE212' }
+56 silly get cb [ 404,
+56 silly get   { 'content-type': 'application/json',
+56 silly get     'cache-control': 'max-age=0',
+56 silly get     'content-length': '21',
+56 silly get     'accept-ranges': 'bytes',
+56 silly get     date: 'Wed, 31 Aug 2016 00:36:52 GMT',
+56 silly get     via: '1.1 varnish',
+56 silly get     age: '0',
+56 silly get     connection: 'keep-alive',
+56 silly get     'x-served-by': 'cache-mel6521-MEL',
+56 silly get     'x-cache': 'MISS',
+56 silly get     'x-cache-hits': '0',
+56 silly get     'x-timer': 'S1472603812.678646,VS0,VE212' } ]
+57 verbose stack Error: Not found : @angular/complier-cli
+57 verbose stack     at makeError (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+57 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+57 verbose stack     at Request._callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+57 verbose stack     at Request.self.callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:200:22)
+57 verbose stack     at emitTwo (events.js:87:13)
+57 verbose stack     at Request.emit (events.js:172:7)
+57 verbose stack     at Request.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:1067:10)
+57 verbose stack     at emitOne (events.js:82:20)
+57 verbose stack     at Request.emit (events.js:169:7)
+57 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:988:12)
+58 verbose statusCode 404
+59 verbose pkgid @angular/complier-cli
+60 verbose cwd c:\Users\Radium\dev\buc-ime
+61 error Windows_NT 10.0.14393
+62 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "@angular/complier-cli"
+63 error node v4.4.7
+64 error npm  v2.15.8
+65 error code E404
+66 error 404 Not found : @angular/complier-cli
+66 error 404
+66 error 404 '@angular/complier-cli' is not in the npm registry.
+66 error 404 You should bug the author to publish it (or use the name yourself!)
+66 error 404 It was specified as a dependency of 'buc-ime'
+66 error 404
+66 error 404 Note that you can also install from a
+66 error 404 tarball, folder, http url, or git url.
+67 verbose exit [ 1, true ]

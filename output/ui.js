@@ -51,7 +51,7 @@
 	var BUCIMEUiModule_1 = __webpack_require__(364);
 	function startIME() {
 	    var a = document.createElement('div');
-	    a.innerHTML = "<buc-candidate></buc-candidate>";
+	    a.innerHTML = "<buc-candidate></buc-candidate><buc-toolbar> </buc-toolbar>";
 	    document.body.appendChild(a);
 	    platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(BUCIMEUiModule_1.BUCIMEUiModule);
 	}
@@ -56483,6 +56483,7 @@
 	var common_1 = __webpack_require__(232);
 	var platform_browser_1 = __webpack_require__(230);
 	var CandidateView_1 = __webpack_require__(365);
+	var ToolbarView_1 = __webpack_require__(367);
 	var BUCIMEUiModule = (function () {
 	    function BUCIMEUiModule() {
 	    }
@@ -56492,8 +56493,8 @@
 	                platform_browser_1.BrowserModule,
 	                common_1.CommonModule,
 	            ],
-	            declarations: [CandidateView_1.CandidateView],
-	            bootstrap: [CandidateView_1.CandidateView],
+	            declarations: [CandidateView_1.CandidateView, ToolbarView_1.ToolbarView],
+	            bootstrap: [CandidateView_1.CandidateView, ToolbarView_1.ToolbarView],
 	            exports: [CandidateView_1.CandidateView]
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -56526,13 +56527,26 @@
 	            'b',
 	            'c'
 	        ];
+	        this.keystring = '';
 	    }
+	    CandidateView.prototype.onKeyDown = function (e) {
+	        console.log(e);
+	        if (e.key == 'Backspace') {
+	            this.keystring = this.keystring.slice(0, -1);
+	        }
+	        else {
+	            this.keystring += e.key;
+	        }
+	    };
 	    CandidateView = __decorate([
 	        core_1.Component({
 	            selector: 'buc-candidate',
 	            templateUrl: 'src/ui/CandidateView.html',
 	            styleUrls: ['src/ui/CandidateView.css'],
-	            directives: [Draggable_1.Draggable]
+	            directives: [Draggable_1.Draggable],
+	            host: {
+	                "(document:keydown)": 'onKeyDown($event)'
+	            }
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], CandidateView);
@@ -56609,6 +56623,39 @@
 	    return Draggable;
 	}());
 	exports.Draggable = Draggable;
+
+
+/***/ },
+/* 367 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(38);
+	var Draggable_1 = __webpack_require__(366);
+	var ToolbarView = (function () {
+	    function ToolbarView() {
+	    }
+	    ToolbarView = __decorate([
+	        core_1.Component({
+	            selector: 'buc-toolbar',
+	            templateUrl: 'src/ui/ToolbarView.html',
+	            styleUrls: ['src/ui/ToolbarView.css'],
+	            directives: [Draggable_1.Draggable]
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], ToolbarView);
+	    return ToolbarView;
+	}());
+	exports.ToolbarView = ToolbarView;
 
 
 /***/ }
